@@ -1,0 +1,24 @@
+To disable rpc authentication please modify 2 lines
+"rpc-authentication-required": false,
+"rpc-whitelist-enabled": false,
+
+--新增自動監視目錄功能：
+在配置檔案：~/.config/transmission-daemon/settings.json 中新增如下內容即可：
+#transmission監控目錄，凡是在這個目錄裡的種子都會自動下載
+"watch-dir": "/home/xxx/Download", 
+"watch-dir-enabled": true,
+
+sudo ufw allow 9091
+
+查看目前的狀態。
+transmission-remote -st
+
+是否啟動成功。
+service transmission-daemon status
+
+查看全部 torrents 的情形。
+transmission-remote -list
+	
+transmission-remote -t1 -i
+
+transmission-remote -t 7 -i
